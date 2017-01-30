@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CoreConcept</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  	<%= render 'layouts/header' %>
+      <% flash.each do |key, value| %>
+
+        <div class="<%= flash_class(key.split(' ')[0].to_sym) %>">
+          <%= value %>
+          <a href="#" class="close"  aria-label="close"> × </a>
+        </div>
+      <% end %>
+    <%= yield %>
+    <%= render 'layouts/footer' %>
+  </body>
+</html>

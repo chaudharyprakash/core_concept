@@ -1,0 +1,40 @@
+<nav class="navbar navbar-default navbar-static-top">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            <span aria-hidden="true" class="glyphicon glyphicon-user">
+            <% if current_user.present? %>
+              <%= current_user.present? ? current_user.first_name : current_user.email %> </span>
+            <% else %>
+              User
+            <% end %>
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <% unless current_user.present? %>
+              <li>
+                <%= link_to new_user_session_path do %>
+                  <i class="glyphicon glyphicon-log-in"></i> Login
+                <% end %>
+              </li>
+              <li class="divider"></li>
+              <li>
+                <%= link_to new_user_registration_path do %>
+                  <i class="glyphicon glyphicon-new-window"></i> Sign Up
+                <% end %>
+              </li>
+            <% else %>
+              <li>
+                <span aria-hidden="true" class="glyphicon glyphicon-log-out"> 
+                  <%= link_to "LogOut",destroy_user_session_path, method: :delete %>
+                </span>
+              </li>
+            <% end %>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
