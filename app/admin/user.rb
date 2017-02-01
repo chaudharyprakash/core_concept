@@ -30,16 +30,16 @@ ActiveAdmin.register User do
     end
     f.actions
   end
-  
+
   # use for user locking 
   member_action :lock, method: :put do
     resource.lock_access!
-    redirect_to resource_path, notice: "Locked!"
+    redirect_to admin_users_path, notice: "Locked User!"
   end
 
   # use for user unlocking 
   member_action :unlock, method: :put do
     resource.unlock_access!
-    redirect_to resource_path, notice: "Locked!"
+    redirect_to admin_users_path, notice: "UnLocked User!"
   end
 end
