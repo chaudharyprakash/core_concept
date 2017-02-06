@@ -26,6 +26,10 @@
                 <% end %>
               </li>
             <% else %>
+              <span aria-hidden="true" class="glyphicon glyphicon-edit">
+                <%= link_to "Edit", edit_user_registration_path %>
+              </span>
+
               <li>
                 <span aria-hidden="true" class="glyphicon glyphicon-log-out"> 
                   <%= link_to "LogOut",destroy_user_session_path, method: :delete %>
