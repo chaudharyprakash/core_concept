@@ -1,24 +1,23 @@
-# README
+# Core Concept
+	
+	This repo contains Covers Basic Ruby on Rails conecept.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Requirements/Dependencies
 
-Things you may want to cover:
+1. Ruby (check gemfile/.ruby-version for version)
+1. Bundler
+1. Rails
+1. PostgreSQL
 
-* Ruby version
 
-* System dependencies
+## Getting Started
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. Read the Readme
+1. Confirm Ruby version (.ruby-version)
+1. Confirm Bundle installation and afterwards, bundle install
+1. Confirm Postgresql is properly installed and configured
+    - Copy `config/database.yml.example` to `config/database.yml`
+    - Change authentication in `database.yml` to your PostgreSQL user authentication
+1. `$ rake db:create` to create database in local
+1. `$ rake db:migrate` to migrate schema to local empty database
+1. `$ rake db:seed` to create User and AdminUser

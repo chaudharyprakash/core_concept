@@ -14,8 +14,14 @@
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
+/test/*
 !/log/.keep
 !/tmp/.keep
+
+Gemfile.lock
+
+# Ignore database.yml file.
+/config/database.yml
 
 # Ignore Byebug command history file.
 .byebug_history
