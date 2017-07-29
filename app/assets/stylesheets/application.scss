@@ -14,3 +14,13 @@
  */
 	@import "bootstrap-sprockets";
 	@import "bootstrap";
+
+  .mt-15{
+    margin-top: 15px;
+  }
+  table.table.table-striped{
+    border: aliceblue solid;
+  }
+  .member-header{
+    background-color: grey;
+  }

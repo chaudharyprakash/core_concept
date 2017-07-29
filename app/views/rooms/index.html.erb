@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped">
+      <thead class="member-header">
+        <tr>
+          <th>No</th>
+          <th>First Name</th>
+          <th>Mobile No</th>
+          <th>Rent</th>
+          <th>Date</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @members.each_with_index do |member, index| %>
+        <tr>
+          <td><%= index+1%></td>
+          <td><%= member.name %></td>
+          <td><%= member.phone %></td>
+          <td><%= member.rent %></td>
+          <td><%= member.created_at.to_date %></td>
+          <td><%= link_to 'Edit', edit_room_path(member), class: 'btn btn-primary' %><%= link_to 'Delete', room_path(member), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
