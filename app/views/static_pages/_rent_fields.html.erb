@@ -1,0 +1,15 @@
+<div>
+  <div class="nested-fields">
+    <div class="field">
+      <%= f.text_field :amount,:placeholder => 'Add Amount' %>
+      <%#= f.hidden_field :status, value: 'Pending' %>
+      <% unless f.object.id.present? %>
+        <%= f.submit "pay" , class: 'btn btn-primary col-md-offset-0' %>
+      <% end %>
+      <span class="col-md-offset-2 <%= f.object.status %>">
+        <%= f.object.status.upcase_first if f.object.status.present? %>
+      </span>
+    </div>
+    <%#= link_to_remove_association "Remove Amount", f %>
+  </div>
+</div>

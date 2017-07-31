@@ -1,0 +1,36 @@
+ <!-- user.rents.map{|a| a.amount.to_i}.sum -->
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped">
+      <thead class="member-header">
+        <tr>
+          <th>No</th>
+          <th>Name</th>
+          <th>Mobile No</th>
+          <th>Amount</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td><%= current_user.full_name %></td>
+          <td><%= current_user.phone_number %></td>
+          <td>
+            <%= form_for current_user, url: users_path , :html => { :multipart => true } do |f| %>
+              <%= f.fields_for :rents do |rent| %>
+                <%= render 'rent_fields', f: rent %>
+              <% end %>
+              <div class="links">
+                <%= link_to_add_association 'Add Amount', f, :rents %>
+              </div>
+          </td>
+            <% end %>
+          <td>
+            <b><%= current_user.rents.map{|a| a.amount.to_i}.sum %></b>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
