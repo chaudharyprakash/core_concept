@@ -10,5 +10,11 @@ Rails.application.routes.draw do
   	:passwords => "users/passwords", 
   	:confirmations => "users/confirmations"
   }
+
   get '/users', to: 'static_pages#users'
+  get '/extra_expense', to: 'static_pages#extra_expense'
+  get '/extra_expense_list', to: 'static_pages#extra_expense_list'
+  get '/search', to: 'static_pages#search'
+  get '/rent_list', to: 'static_pages#rent_list'
+
 end

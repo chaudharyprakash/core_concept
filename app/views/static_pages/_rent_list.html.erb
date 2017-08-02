@@ -1,0 +1,8 @@
+<% @rent_lists.each_with_index do |rent_list, index| %>
+  <tr>
+    <td><%= index+1 %></td>
+    <td><%= rent_list.amount %></td>
+    <td><%= rent_list.user.full_name %></td>
+    <td><%= rent_list.created_at.to_date %></td>
+  </tr>
+<% end %>

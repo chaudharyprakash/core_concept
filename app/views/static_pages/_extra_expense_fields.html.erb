@@ -1,0 +1,11 @@
+<div class="nested-fields">
+  <div class="field">
+    <%= f.text_field :name, class: 'from-control', placeholder: 'Enter Name..' %>
+    <%= f.number_field :amount, placeholder: 'Enter Amount..' %>
+    <% if f.object.present? %>
+      <% unless f.object.id.present? %>
+        <%= f.submit "pay" , class: 'btn btn-primary col-md-offset-0' %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<% @extra_expense_lists.each_with_index do |extra_expense_list, index| %>
+  <tr>
+    <td><%= index+1 %></td>
+    <td><%= extra_expense_list.name %></td>
+    <td><%= extra_expense_list.amount %></td>
+    <td><%= extra_expense_list.user.full_name %></td>
+  </tr>
+<% end %>
